@@ -6,5 +6,3 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('This is the todoapp homepage')
 
-def detail(request):
-    return HttpResponse('This is the detail view')
