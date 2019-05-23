@@ -1,11 +1,11 @@
 from django.conf.urls import url
 from django.contrib import admin
-from todoapp import views
+from . import views
 
 
 app_name = 'todoapp'
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
-    url(r'^(?P<task_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 ]

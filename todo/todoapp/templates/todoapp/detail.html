@@ -2,7 +2,26 @@
 
 {% block body %}
 
-<p>Task: {{ task.task_name }} </p>
-<p>Priority: {{ task.task_priority }}</p>
+        <div class="container">
+            <h2>Task</h2>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Task Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class='active'>
+                        <td>
+                            <a>{{ task.task_name }}</a>
+                        </td>
+                        <td>
+                            <a>{{ task.task_priority }}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-{% endblock %}
+        {% endblock %}

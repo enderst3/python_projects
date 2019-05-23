@@ -1,24 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse, Http404
+
+from django.views import generic
 from .models import Task
-from django.template import loader
 
-# Create your views here.
+class IndexView(generic.ListView):
+    template_name = 'todoapp/index.html'
 
-def index(request):
-    task_list = Task.objects.all()
-    # pass template to file
-    context = {
-        'task_list':task_list
-    }
-    return render(request, 'todoapp/index.html', context)
+    def get_queryset(self):
+        return Task.objects.all()
 
-def detail(request, task_id):
-    try:
-        task = Task.objects.get(pk=task_id)
-    except Task.DoesNotExist:
-        raise Http404('Task does not exist')
-    context = {
-        'task':task
-    }
-    return render(request, 'todoapp/detail.html', context)
+class DetailView(generic.DetailView):
+    model = Task
+    template_name = 'todoapp/detail.html'
+
