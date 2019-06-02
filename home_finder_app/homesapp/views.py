@@ -12,3 +12,10 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Location.objects.all()
+
+class LocationView(generic.DetailView):
+    model = Location
+    template_name = 'homesapp/locationview.html'
+
+    # def get_queryset(self):
+    #     return Location.objects.all()
