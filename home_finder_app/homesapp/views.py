@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views import generic
-from .models import Location
+from .models import Location, Property
 
 # Create your views here.
 
@@ -17,5 +17,10 @@ class LocationView(generic.DetailView):
     model = Location
     template_name = 'homesapp/locationview.html'
 
-    # def get_queryset(self):
-    #     return Location.objects.all()
+class LocationView(generic.DetailView):
+    model = Location
+    template_name = 'homesapp/locationview.html'
+
+class PropertyDetail(generic.DetailView):
+    model = Property
+    template_name = 'homesapp/propertyview.html'
