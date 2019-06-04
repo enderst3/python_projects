@@ -1,4 +1,9 @@
+{% extends 'homesapp/base.html' %}
+
+
+{% block body %}
 {% for location in object_list %}
 <a href="/homesapp/{{location.id}}">{{location.location_name}}</a>
 <br>
 {% endfor %}
+{% endblock %}
