@@ -1,8 +1,93 @@
-{% extends 'homesapp/base.html' %}
-
+{% extends "homesapp/base.html" %}
 
 {% block body %}
-{{ property.property_name }}
-</br>
-{{ property.area }}
+
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="img-thumbnail">
+                    <img src="{{property.image_url}}" height="300" width="300">
+                    <div class="caption">
+                        <p>{{ property.property_name }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Property Details</div>
+                    </div>
+                    <div class="card-body">
+                        <table class='table'>
+                            <tr>
+                                <td>
+                                    <label><b>Area SQFT</b></label>
+                                </td>
+                                <td>
+                                    {{ property.area }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Area SQFT</b></label>
+                                </td>
+                                <td>
+                                    {{ property.area }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Property Age</b></label>
+                                </td>
+                                <td>
+                                    {{ property.age }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Price</b></label>
+                                </td>
+                                <td>
+                                    {{ property.price }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Direction Facing</b></label>
+                                </td>
+                                <td>
+                                    {{ property.direction }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Floors</b></label>
+                                </td>
+                                <td>
+                                    {{ property.floors }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label><b>Zip</b></label>
+                                </td>
+                                <td>
+                                    {{ property.postdd }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
 {% endblock %}
