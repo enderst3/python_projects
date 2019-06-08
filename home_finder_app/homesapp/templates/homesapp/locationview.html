@@ -57,6 +57,20 @@
                                                 {{ place.postdd }}
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <a class="btn btn-success" href='/homesapp/{{location.id}}/{{place.id}}'>
+                                                    View Details
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
@@ -69,7 +83,5 @@
     </body>
 </html>
 
-<a href='/homesapp/{{location.id}}/{{place.id}}'>{{ place.property_name }}</a>
-<br>
 
 {% endblock %}
