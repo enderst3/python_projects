@@ -2,8 +2,74 @@
 
 
 {% block body %}
-{% for place in location.property_set.all %}
+
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="containter-fluid">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-8">
+                    <h1>Properties in {{ location.location_name }}</h1>
+                    {% for place in location.property_set.all %}
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <a>{{ place.property_name }}</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="{{ place.image_url }}" height="200" width="200">
+                                </div>
+                                <div class"col-md-6">
+                                    <table class='table'>
+                                        <tr>
+                                            <td>
+                                                <label><b>Area SQFT</b></label>
+                                            </td>
+                                            <td>
+                                                {{ place.area }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label><b>Price</b></label>
+                                            </td>
+                                            <td>
+                                                {{ place.price }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label><b>Floors</b></label>
+                                            </td>
+                                            <td>
+                                                {{ place.floors }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label><b>Zip</b></label>
+                                            </td>
+                                            <td>
+                                                {{ place.postdd }}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
 <a href='/homesapp/{{location.id}}/{{place.id}}'>{{ place.property_name }}</a>
 <br>
-{% endfor %}
+
 {% endblock %}
