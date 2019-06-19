@@ -22,6 +22,8 @@ class Property(models.Model):
     floors = models.CharField(max_length = 200)
     postdd = models.CharField(max_length = 200)
     image_url = models.CharField(max_length = 500)
+    lat_field = models.CharField(max_length = 200)
+    long_field = models.CharField(max_length = 200)
 
     def __str__(self):
         return self.property_name
